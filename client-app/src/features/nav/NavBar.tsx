@@ -16,9 +16,9 @@ const NavBar: React.FC = () => {
             <img src="/assets/logo.png" alt="logo" style={{marginRight: '10px'}}/>
             HospitalManager
         </Menu.Item>
-        <Menu.Item name='Pacientes' as={NavLink} to='/dashboard' />
+        <Menu.Item name='Pacientes' as={NavLink} to='/pacienteDashboard' />
         <Menu.Item>
-            <Button as={NavLink} to='/novoPaciente' positive content='Novo Paciente' />
+        <Menu.Item name='Vagas' as={NavLink} to='/vagaDashboard' />
         </Menu.Item>
         {username &&
                   <Menu.Item position='right'>
