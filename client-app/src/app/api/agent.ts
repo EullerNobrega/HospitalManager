@@ -62,7 +62,7 @@ const Paciente = {
   details: (id: number) => requests.get(`/paciente/consultarPaciente/${id}`),
   create: (paciente: IPaciente) => requests.post("/paciente/cadastrarPaciente", paciente),
   update: (paciente: IPaciente) =>
-    requests.put("/paciente/editarPaciente/", paciente),
+    requests.put("/paciente/editarPaciente", paciente),
   delete: (id: number) => requests.del(`/paciente/removerPaciente/${id}`),
 };
 
