@@ -64,7 +64,6 @@ export default class PacienteStore {
     try {
       await agent.Paciente.create(paciente);
       runInAction("creating paciente", () => {
-        this.pacienteRegistry.set(paciente.id, paciente);
         this.submitting = false;
       });
       history.push("/pacienteDashboard");
@@ -82,7 +81,6 @@ export default class PacienteStore {
     try {
       await agent.Paciente.update(paciente);
       runInAction("editing paciente", () => {
-        this.pacienteRegistry.set(paciente.id, paciente);
         this.paciente = paciente;
         this.submitting = false;
       });
