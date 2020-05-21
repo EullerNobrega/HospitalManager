@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import { IPaciente } from "../../../app/models/paciente";
 import { observer } from "mobx-react-lite";
 
-const PacienteListItem: React.FC<{ paciente: IPaciente }> = ({
-  paciente,
-}) => {
+const PacienteListItem: React.FC<{ paciente: IPaciente }> = ({ paciente }) => {
   return (
     <Segment.Group>
       <Segment>
@@ -20,7 +18,7 @@ const PacienteListItem: React.FC<{ paciente: IPaciente }> = ({
         </Item.Group>
       </Segment>
       <Segment>
-        <Icon name="clock" /> {paciente.email}
+        <Icon name="mail" /> {paciente.email}
       </Segment>
       <Segment>
         <Button
@@ -29,6 +27,14 @@ const PacienteListItem: React.FC<{ paciente: IPaciente }> = ({
           floated="right"
           content="Editar"
           color="blue"
+        />
+        <Button
+        
+          as={Link}
+          to={`/messageDelete/${paciente.id}`}
+          floated="right"
+          content="Remover"
+          color="red"
         />
       </Segment>
     </Segment.Group>

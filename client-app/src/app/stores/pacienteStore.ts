@@ -95,13 +95,10 @@ export default class PacienteStore {
     }
   };
 
-  /* @action deletePaciente = async (
-        event: SyntheticEvent<HTMLButtonElement>,
-        id: string
+  @action deletePaciente = async (
+        id: number
       ) => {
         this.submitting = true;
-        this.target = event.currentTarget.name;
-        console.log(this.target);
         try {
           await agent.Paciente.delete(id);
           runInAction("deleting paciente", () => {
@@ -116,13 +113,5 @@ export default class PacienteStore {
           });
           console.log(error);
         }
-      }; */
-
-      @action limparPaciente = () => {
-        this.paciente = {
-          id: null,
-          nome: "",
-          email: "",
-        }
-      }
+      }; 
 }

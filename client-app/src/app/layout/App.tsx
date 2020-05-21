@@ -18,6 +18,7 @@ import ModalContainer from "../common/modals/ModalContainer";
 import { Dashboard } from "../../features/dashboard/Dashboard";
 import PacienteDashboard from "../../features/paciente/dashboard/PacienteDashboard";
 import PacienteForm from "../../features/paciente/form/PacienteForm";
+import MessageExampleWarning from "../common/message/MessageExampleWarning";
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
@@ -52,6 +53,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/login" component={LoginForm} />
                 <Route exact path="/pacienteDashboard" component={PacienteDashboard} />
+                <Route exact path="/messageDelete/:id" component={MessageExampleWarning} />
                 <Route
                   key={location.key}
                   path={["/createPaciente", "/manage/:id"]}

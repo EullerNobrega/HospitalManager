@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { IUser, IUserFormValues } from "../models/user";
 import { IPaciente } from "../models/paciente";
 
-axios.defaults.baseURL = "http://localhost:8080/api";
+axios.defaults.baseURL = "https://crud-paciente.herokuapp.com";
 /*
 axios.interceptors.request.use(
   (config) => {
@@ -58,12 +58,12 @@ const User = {
 };
 
 const Paciente = {
-  list: (): Promise<IPaciente[]> => requests.get("/pacientes"),
-  details: (id: number) => requests.get(`/pacientes/${id}`),
-  create: (paciente: IPaciente) => requests.post("/pacientes", paciente),
+  list: (): Promise<IPaciente[]> => requests.get("/paciente/listarPacientes"),
+  details: (id: number) => requests.get(`/paciente/consultarPaciente/${id}`),
+  create: (paciente: IPaciente) => requests.post("/paciente/cadastrarPaciente", paciente),
   update: (paciente: IPaciente) =>
-    requests.put(`/pacientes/${paciente.id}`, paciente),
-  delete: (id: string) => requests.del(`/pacientes/${id}`),
+    requests.put("/paciente/editarPaciente/", paciente),
+  delete: (id: number) => requests.del(`/paciente/removerPaciente/${id}`),
 };
 
 export default {
